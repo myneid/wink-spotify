@@ -1,10 +1,10 @@
 # Spotify for Wink
 
-The bundled Spotify Connect companion for [Wink](https://github.com/myneid/wink), published as a portable web-plugin example. Requires Wink 0.7.0 or later on macOS 13+.
+The bundled Spotify player for [Wink](https://github.com/myneid/wink), published as a portable web-plugin example. Requires Wink 0.8.0 or later on macOS 13+. Older Wink hosts do not provide the streaming-token bridge.
 
 ## Use it
 
-Install [Wink](https://github.com/myneid/wink/releases/latest), then choose **Apps → Spotify → Connect with Spotify**. Spotify opens in your browser for consent. Open Spotify on a playback device to play audio; this plugin is a controller, not a streaming engine.
+Install [Wink](https://github.com/myneid/wink/releases/latest), then choose **Apps → Spotify → Connect with Spotify**. Spotify opens in your browser for consent. Choose **Play in Wink** to use Spotify’s Web Playback SDK without a separate Spotify app. Premium is required. Existing users must disconnect and reconnect once to grant streaming permission. This is experimental: SDK/iframe initialization passes, but audible account playback remains unverified.
 
 Wink includes this plugin already. **Do not install this repository over the bundled copy:** Wink rejects duplicate IDs, and the native `spotify` capability is deliberately restricted to the trusted bundled package. Publishing this source does not grant arbitrary GitHub plugins access to that bridge. Generic web plugins can be installed from GitHub; this privileged example ships with Wink.
 
@@ -14,7 +14,7 @@ Keyboard-driven player, album artwork, track search, liked songs, playlist brows
 
 ## OAuth and access
 
-The public Wink client ID is bundled; no client secret or developer registration is needed by users. Uses PKCE via Wink's native bridge, with callback `http://127.0.0.1:43821/callback`. Tokens stay in macOS Keychain, never JavaScript or this repository.
+The public Wink client ID is bundled; no client secret or developer registration is needed by users. Uses PKCE via Wink's native bridge, with callback `http://127.0.0.1:43821/callback`. Refresh tokens stay in macOS Keychain. The bundled SDK receives a short-lived access token through the native bridge; no credentials are stored in this repository.
 
 **The Spotify app is currently in development mode.** Only accounts authorized under Spotify's current development rules can use it. A public download is not unrestricted Spotify access. Public availability requires Spotify approval; playback controls require an eligible Premium account. Live account login and playback have not yet been end-to-end verified.
 
@@ -24,7 +24,7 @@ The public Wink client ID is bundled; no client secret or developer registration
 
 To try changes, copy these four files into a Wink source checkout's bundled package directory and build Wink. Host native changes belong in the Wink repository. Keep the two copies synchronized when releasing.
 
-Playlist editing, library mutation, podcasts, and in-plugin streaming are not implemented. Unofficial project; not affiliated with Spotify.
+Playlist editing, library mutation and podcasts are not implemented. Unofficial project; not affiliated with Spotify.
 
 ## License
 
