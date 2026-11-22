@@ -29,3 +29,5 @@ Playlist editing, library mutation and podcasts are not implemented. Unofficial 
 ## License
 
 GPL-3.0; see [LICENSE](LICENSE).
+
+The built-in Wink playback device connects and is selected automatically when Spotify opens. Audio may require clicking **Play in Wink** to satisfy browser activation. You can still explicitly choose another device.
