@@ -10,7 +10,7 @@ Wink includes this plugin already. **Do not install this repository over the bun
 
 ## Features
 
-Keyboard-driven player, album artwork, track search, liked songs, playlist browsing, queue viewing/addition, device selection, play/pause, skip, seek, volume, shuffle and repeat. Space toggles playback, N/P skip, and / focuses search.
+Keyboard-driven player, album artwork, artist/album/track search, artist discographies with release-type filters, album track lists and full-album playback, liked songs, playlist browsing, queue viewing/addition, device selection, play/pause, skip, seek, volume, shuffle and repeat. Space toggles playback, N/P skip, and / focuses search.
 
 ## OAuth and access
 
@@ -31,3 +31,7 @@ Playlist editing, library mutation and podcasts are not implemented. Unofficial 
 GPL-3.0; see [LICENSE](LICENSE).
 
 The built-in Wink playback device connects and is selected automatically when Spotify opens. Audio may require clicking **Play in Wink** to satisfy browser activation. You can still explicitly choose another device.
+
+### Album-first listening
+
+Search defaults to **Artists**. Search an artist, choose **Albums →**, then **Tracks →** to open an album. **Play album** plays the full album; playing a track inside an album starts there and continues in album order (subject to your shuffle/repeat settings). Use **← Back** to return. Albums, singles/EPs, compilations and guest appearances have separate filters; **Load more** continues paginated results. Requires a Wink host with the artist-albums and album-tracks bridge endpoints (not present in 0.8.1).
